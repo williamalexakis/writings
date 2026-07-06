@@ -2,8 +2,9 @@
 
 *11 June 2026*
 
-Large language models (LLMs) like ChatGPT, Claude, etc. have by now cemented themselves in our everyday lives. But most people still don't know how LLMs work — mostly because of the lack of education about AI and because companies are annoyingly focused on proprietary consumerism which hides even more about how this stuff works.
-I won't focus much on AI literacy, but it's a big reason for this essay. People misusing AI by treating it like a glorified aearch engine or thinking it's alive both stem from the fact that many just don't know that an LLM — at its core — is just maths, and specifically a concept called *attention*.
+Large language models (LLMs) like ChatGPT, Claude, etc. have now cemented themselves in our everyday lives. But most people still don't know how LLMs work — mostly because of the lack of education about AI, plus companies are annoyingly focused on proprietary consumerism which hides even more about how this stuff works.
+
+I won't focus much on AI literacy, but it's a big reason for this essay. People misusing AI by treating it like a glorified search engine, or thinking it's alive, both stem from the fact that many people just don't know this stuff. In reality, an LLM — at its core — is just maths, and specifically a concept called *attention*.
 
 This concept of attention was introduced in Google's 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762), and I'll go over how it works here — assuming you know some linear algebra but don't know how this specifically works.
 
