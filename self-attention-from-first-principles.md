@@ -2,7 +2,10 @@
 
 *11 June 2026*
 
-Attention was introduced in Google's 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762), and I'll go over how it works here — assuming you know some linear algebra but don't know how this specifically works.
+Large language models (LLMs) like ChatGPT, Claude, etc. have by now cemented themselves in our everyday lives. But most people still don't know how LLMs work — mostly because of the lack of education about AI and because companies are annoyingly focused on proprietary consumerism which hides even more about how this stuff works.
+I won't focus much on AI literacy, but it's a big reason for this essay. People misusing AI by treating it like a glorified aearch engine or thinking it's alive both stem from the fact that many just don't know that an LLM — at its core — is just maths, and specifically a concept called *attention*.
+
+This concept of attention was introduced in Google's 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762), and I'll go over how it works here — assuming you know some linear algebra but don't know how this specifically works.
 
 For each token processed, we look at every previous token (including itself) in the sequence and calculate how relevant each one is to our current token — then pull info from them based on their attention weights, letting us build associations between individual tokens. A very basic example would be that when we process the token "bank" in "the river bank", it's meaningless by itself, but the attention mechanism lets the trained model strongly associate it with the token "river".
 
@@ -154,5 +157,11 @@ So you see how $`\mathbf{o}_{\text{bank}}`$ aligns closely with $`\mathbf{v}_{\t
 </p>
 
 And with that, we've gone all the way from "the river bank" — where "river" and "bank" have nothing to do with each other by themselves — to proving exactly how "bank" is related to "river" with the maths behind *self-attention*. Now this is just one part of LLMs overall, but it's the one system that I'd say is actually worth taking your time to understand.
+
+I think it's really important to demistify widespread technology like this because it lets us know exactly what this type of product *can do*, past the brands and marketing. Now obviously not everyone needs to be forcefed self-attention derivations, but some abstract teaching would still be useful I'd say. Again, the point of tech literacy is to prevent stuff like bosses replacing employees with agents and students depending on AI — all just from not knowing what LLMs really are.
+
+Anyways, I also wanna mention that another reason for writing this essay is for *me* to learn about attention. It's a sort of trial-by-fire learning method, where by having to explain the concept in my own words then I have to internalize it as well — for example, every word or concept I wrote that I didn't fully understand, I researched it and wrote in the explanation itself for the *how* and *why* of something.
+
+So apart from AI literacy, another takeaway would be that if you really want to learn something, don't just read a bunch of boring papers but try to teach it in your own words until you learn it yourself, and then you end up with both learning something new and hard proof you know it as well.
 
 [github.com/williamalexakis/self-attention.c](https://github.com/williamalexakis/self-attention.c)
