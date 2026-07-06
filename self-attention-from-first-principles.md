@@ -8,7 +8,9 @@ I won't focus much on AI literacy, but it's a big reason for this essay. People 
 
 This concept of attention was introduced in Google's 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762), and I'll go over how it works here — assuming you know some linear algebra but don't know how this specifically works.
 
-For each token processed, we look at every previous token (including itself) in the sequence and calculate how relevant each one is to our current token — then pull info from them based on their attention weights, letting us build associations between individual tokens. A very basic example would be that when we process the token "bank" in "the river bank", it's meaningless by itself, but the attention mechanism lets the trained model strongly associate it with the token "river".
+First, an LLM takes our prompt (the user message) and turns it into a series of *tokens*, which are individual words or components of words. For example, the string "the river bank" in a prompt is tokenized into "the", "river", and "bank" so each word is isolated and processed easily.
+
+For each token processed, we look at every previous token (including itself) in the sequence and calculate how relevant each one is to our current token — then pull info from them based on their attention weights, letting us build associations between individual tokens. When we process the token "bank", it's meaningless by itself, but the attention mechanism lets the model — which has already been trained on a bunch of language data — strongly associate it with the token "river".
 
 The transformer doesn't actually 'know' what those "river" or "bank" tokens mean because this is all just maths. Before attention, the input token embeddings $`\mathbf{X}`$ are put through three learned linear projections:
 
