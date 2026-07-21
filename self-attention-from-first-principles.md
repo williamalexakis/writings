@@ -8,6 +8,8 @@ I won't focus much on AI literacy, but it's a big reason for this essay. People 
 
 This concept of attention was introduced in Google's 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762), and I'll go over how it works here — assuming you know some linear algebra but don't know how this specifically works.
 
+## Deriving the Core Concept
+
 First, an LLM takes our prompt (the user message) and turns it into a series of *tokens*, which are individual words or components of words. For example, the string "the river bank" in a prompt is tokenized into "the", "river", and "bank" so each word is isolated and processed easily.
 
 For each token processed, we look at every previous token (including itself) in the sequence and calculate how relevant each one is to our current token — then pull info from them based on their attention weights, letting us build associations between individual tokens. When we process the token "bank", it's meaningless by itself, but the attention mechanism lets the model — which has already been trained on a bunch of language data — strongly associate it with the token "river".
@@ -160,6 +162,8 @@ So you see how $`\mathbf{o}_{\text{bank}}`$ aligns closely with $`\mathbf{v}_{\t
 </p>
 
 And with that, we've gone all the way from "the river bank" — where "river" and "bank" have nothing to do with each other by themselves — to proving exactly how "bank" is related to "river" with the maths behind *self-attention*. Now this is just one part of LLMs overall, but it's the one system that I'd say is actually worth taking your time to understand.
+
+## Closing Thoughts
 
 I think it's really important to demistify widespread technology like this because it lets us know exactly what this type of product *can do*, past the brands and marketing. Now obviously not everyone needs to be forcefed self-attention derivations, but some abstract teaching would still be useful I'd say. Again, the point of tech literacy is to prevent stuff like bosses replacing employees with agents and students depending on AI — all just from not knowing what LLMs really are.
 
